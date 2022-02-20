@@ -24,20 +24,12 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			for (int j = 0; j < 10; j++) {
 				JButton jB2 = new JButton();
 				jB2.setBounds(i * 70 + 70, j * 70 + 70, 70, 70);
-				jB2.setBackground(Color.GREEN);
-				jB2.setEnabled(true);
-				jB2.setVisible(true);
 				if (i == 0) {
-					// jB2.setText(""+j);
-					Border thickBorder = new LineBorder(Color.GREEN, 1);
-					jB2.setBorder(thickBorder);
 					if (j != 0) {
 						jB2.setText(names[j]);
 					}
 				}
 				if (j == 0) {
-					Border thickBorder = new LineBorder(Color.GREEN, 1);
-					jB2.setBorder(thickBorder);
 					if (i != 0) {
 						jB2.setText("" + i);
 					}
@@ -307,13 +299,13 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			for (y = 1; y < 10; y++) {
 				if (e.getSource() == jB1[x][y]) {
 					if (x < 7)
-						jB1[x + 1][y].setBackground(Color.GREEN);
+						jB1[x + 1][y].setBackground(null);
 					if (x > 1)
-						jB1[x - 1][y].setBackground(Color.GREEN);
+						jB1[x - 1][y].setBackground(null);
 					if (y < 9)
-						jB1[x][y + 1].setBackground(Color.GREEN);
+						jB1[x][y + 1].setBackground(null);
 					if (y > 1)
-						jB1[x][y - 1].setBackground(Color.GREEN);
+						jB1[x][y - 1].setBackground(null);
 				}
 			}
 		}
@@ -633,5 +625,21 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	public static void main(String[] args) {
 		GameAnimal4 game = new GameAnimal4();
 		game.setImages();
+
+		// for (int index = 0; index < 100; index++) {
+		// int[] res = generateValues();
+		// System.out.println(res[0] + " " + res[1]);
+		// }
+		// System.out.println(generateValues()[0]);
+	}
+
+	public static int[] generateValues() {
+		// FIRST X, THEN Y
+		int minX = 1, maxX = 7;
+		int minY = 1, maxY = 9;
+
+		int resX = (int) ((Math.random() * (maxX - minX)) + minX);
+		int resY = (int) ((Math.random() * (maxY - minY)) + minY);
+		return new int[] { resX, resY };
 	}
 }
