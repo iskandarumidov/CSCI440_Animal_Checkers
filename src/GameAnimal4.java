@@ -357,8 +357,8 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 
 		// System.out.println(jB1[5][2].getName());
 		ga.add(jP1);
-		// setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
 		setExtendedState(JFrame.NORMAL);
+		this.setVisible(true);
 	}
 
 	public void mousePressed(MouseEvent e) {
@@ -742,7 +742,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 
 	public static void main(String[] args) {
 		GameAnimal4 game = new GameAnimal4();
-		game.setVisible(true);
 		game.implementGame(game);
 		game.setImages();
 		// System.out.println(game.jB1.);
