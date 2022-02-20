@@ -1,8 +1,5 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.imageio.*;
-import java.io.*;
 import java.awt.event.*;
 
 public class GameAnimal4 extends JFrame implements MouseListener {
@@ -12,8 +9,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	private JButton[][] jB1 = new JButton[8][10];
 	private int[][] buttonClickCount = new int[8][10];
 	private JTextArea commentBox = new JTextArea("Hi Welcome, Player1 has to make a move to start the game.");
-
-	String names[] = { "a", "a", "b", "c", "d", "e", "f", "g", "h", "i" };
 
 	public GameAnimal4() {
 		setSize(1150, 900);
@@ -25,19 +20,12 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 				JButton jB2 = new JButton();
 				jB2.setBounds(i * 70 + 70, j * 70 + 70, 70, 70);
 				if (i == 0) {
-					if (j != 0) {
-						jB2.setText(names[j]);
-					}
+					jB2.setText(String.valueOf((char) ('a' + j - 1)) + " (" + j + ")");
 				}
 				if (j == 0) {
-					if (i != 0) {
-						jB2.setText("" + i);
-					}
+					jB2.setText("" + i);
 				}
 				jB1[i][j] = jB2;
-				if (i == 2 && j == 9) {
-
-				}
 				jB1[i][j].addMouseListener(this);
 				jP1.add(jB1[i][j]);
 				jB1[i][j].setName("Button-" + i + "*" + j);
