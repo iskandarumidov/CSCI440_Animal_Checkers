@@ -303,10 +303,9 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		jP1.setBounds(50, 50, 1400, 850);
 		jP1.setVisible(true);
 		jP1.setBackground(Color.GREEN);
-		Font font = new Font("Serif", Font.BOLD, 20);
+		// Font font = new Font("Serif", Font.BOLD, 20);
 		Border panelBorder = new LineBorder(Color.BLACK, 5, true);
-		TitledBorder title = new TitledBorder(panelBorder, "Animals Checker", TitledBorder.CENTER, TitledBorder.TOP,
-				font);
+		TitledBorder title = new TitledBorder(panelBorder, "Animals Checker", TitledBorder.CENTER, TitledBorder.TOP);
 		title.setTitleJustification(TitledBorder.CENTER);
 		jP1.setBorder(title);
 		for (int i = 0; i < 8; i++) {
@@ -373,7 +372,7 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		commentBox.setFont(commentfont);
 		Border commentBoxBorder = new LineBorder(Color.BLACK, 5, true);
 		commentBox
-				.setBorder(new TitledBorder(commentBoxBorder, "Comments", TitledBorder.CENTER, TitledBorder.TOP, font));
+				.setBorder(new TitledBorder(commentBoxBorder, "Comments", TitledBorder.CENTER, TitledBorder.TOP));
 		p1elepMovesField.setBounds(750, 260, 300, 60);
 		p1elepMovesField.setEditable(false);
 		p1elepMovesField.setVisible(true);
@@ -835,5 +834,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		game.setVisible(true);
 		game.implementGame(game);
 		game.setImages();
+		// System.out.println(game.jB1.);
 	}
 }
