@@ -449,7 +449,27 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	}
 
 	public void mousePressed(MouseEvent e) {
-
+		for (x = 1; x < 8; x++) {
+			for (y = 1; y < 10; y++) {
+				if ((e.getSource() == jB1[x][y] && jB1[x][y].getName() == "elephantButton") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "wolfButton") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "tigerButton") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "mouseButton") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "elephantButton1") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "wolfButton1") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "tigerButton1") ||
+						(e.getSource() == jB1[x][y] && jB1[x][y].getName() == "mouseButton1")) {
+					if (x < 7)
+						jB1[x + 1][y].setBackground(Color.RED);
+					if (x > 1)
+						jB1[x - 1][y].setBackground(Color.RED);
+					if (y < 9)
+						jB1[x][y + 1].setBackground(Color.RED);
+					if (y > 1)
+						jB1[x][y - 1].setBackground(Color.RED);
+				}
+			}
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
