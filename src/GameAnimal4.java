@@ -12,7 +12,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	private int elephantMoveCount = 0, wolfMoveCount = 0, tigerMoveCount = 0, mouseMoveCount = 0,
 			elephantMoveCount1 = 0, wolfMoveCount1 = 0, tigerMoveCount1 = 0, mouseMoveCount1 = 0;
 	private JButton[][] jB1 = new JButton[8][10];
-	private JButton exitButton = new JButton();
 	private JTextArea player1MovesField = new JTextArea();
 	private JTextArea player2MovesField = new JTextArea();
 	private JTextArea p1elepMovesField = new JTextArea();
@@ -403,15 +402,7 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		p2mousMovesField.setEditable(false);
 		p2mousMovesField.setVisible(true);
 		p2mousMovesField.setBackground(Color.GREEN);
-		exitButton.setBounds(400, 790, 100, 50);
-		exitButton.setVisible(true);
-		exitButton.setBackground(Color.BLUE);
-		exitButton.setForeground(Color.BLACK);
-		exitButton.setFont(new Font("Arial", Font.BOLD, 20));
-		;
-		exitButton.setText("Exit");
-		exitButton.addMouseListener(this);
-		jP1.add(exitButton);
+
 		jP1.add(commentBox);
 		jP1.add(p1elepMovesField);
 		jP1.add(p2elepMovesField);
@@ -497,10 +488,7 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if (e.getSource() == exitButton) {
-			System.exit(0);
-			System.out.println("Exit button clicked");
-		}
+
 		for (x = 1; x < 8; x++) {
 			for (y = 1; y < 10; y++) {
 				if (e.getSource() == jB1[x][y]) {
