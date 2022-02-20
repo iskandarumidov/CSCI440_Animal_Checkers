@@ -9,8 +9,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	public int x = 0, y = 0, player1MoveCount = 0, player2MoveCount = 0, elephantclickCount = 0, wolfclickCount = 0,
 			tigerclickCount = 0, mouseclickCount = 0, elephantclickCount1 = 0, wolfclickCount1 = 0,
 			tigerclickCount1 = 0, mouseclickCount1 = 0;
-	private int elephantMoveCount = 0, wolfMoveCount = 0, tigerMoveCount = 0, mouseMoveCount = 0,
-			elephantMoveCount1 = 0, wolfMoveCount1 = 0, tigerMoveCount1 = 0, mouseMoveCount1 = 0;
 	private JButton[][] jB1 = new JButton[8][10];
 	private int[][] buttonClickCount = new int[8][10];
 	private JTextArea commentBox = new JTextArea("Hi Welcome, Player1 has to make a move to start the game.");
@@ -19,14 +17,9 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 
 	public GameAnimal4() {
 		setSize(1150, 900);
-		setResizable(false);
-		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		JPanel jP1 = new JPanel();
 		jP1.setLayout(null);
-		jP1.setBounds(50, 50, 1400, 850);
-		jP1.setVisible(true);
-		jP1.setBackground(Color.GREEN);
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 10; j++) {
 				JButton jB2 = new JButton();
@@ -87,11 +80,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		commentBox.setBackground(Color.RED);
 
 		jP1.add(commentBox);
-		jB1[1][9].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// System.out.println("Button-1*9 clicked");
-			}
-		});
 
 		// System.out.println(jB1[5][2].getName());
 		this.add(jP1);
@@ -152,7 +140,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			elephantMoveCount++;
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
@@ -179,7 +166,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			elephantMoveCount1++;
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
@@ -207,7 +193,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			wolfMoveCount++;
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
@@ -235,7 +220,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			wolfMoveCount1++;
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
@@ -262,7 +246,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			tigerMoveCount++;
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
@@ -289,7 +272,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			tigerMoveCount1++;
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
@@ -317,7 +299,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			mouseMoveCount++;
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
@@ -345,7 +326,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
 			jB1[oldX][oldY].setIcon(null);
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
-			mouseMoveCount1++;
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
