@@ -280,7 +280,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	}
 
 	private void implementGame(GameAnimal4 ga) {
-		setTitle("Game Animal");
 		setSize(1150, 900);
 		setResizable(false);
 		setLocationRelativeTo(null);
@@ -290,9 +289,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		jP1.setBounds(50, 50, 1400, 850);
 		jP1.setVisible(true);
 		jP1.setBackground(Color.GREEN);
-		Border panelBorder = new LineBorder(Color.BLACK, 5, true);
-		TitledBorder title = new TitledBorder(panelBorder, "Animals Checker", TitledBorder.CENTER, TitledBorder.TOP);
-		jP1.setBorder(title);
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 10; j++) {
 				JButton jB2 = new JButton();
@@ -351,9 +347,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		commentBox.setEditable(false);
 		commentBox.setVisible(true);
 		commentBox.setBackground(Color.RED);
-		Border commentBoxBorder = new LineBorder(Color.BLACK, 5, true);
-		commentBox
-				.setBorder(new TitledBorder(commentBoxBorder, "Comments", TitledBorder.CENTER, TitledBorder.TOP));
 
 		jP1.add(commentBox);
 		jB1[1][9].addActionListener(new ActionListener() {
