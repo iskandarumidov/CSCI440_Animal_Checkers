@@ -18,6 +18,86 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	String names[] = { "a", "a", "b", "c", "d", "e", "f", "g", "h", "i" };
 
 	public GameAnimal4() {
+		setSize(1150, 900);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		JPanel jP1 = new JPanel();
+		jP1.setLayout(null);
+		jP1.setBounds(50, 50, 1400, 850);
+		jP1.setVisible(true);
+		jP1.setBackground(Color.GREEN);
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 10; j++) {
+				JButton jB2 = new JButton();
+				jB2.setBounds(i * 70 + 70, j * 70 + 70, 70, 70);
+				jB2.setBackground(Color.GREEN);
+				jB2.setEnabled(true);
+				jB2.setVisible(true);
+				if (i == 0) {
+					// jB2.setText(""+j);
+					Border thickBorder = new LineBorder(Color.GREEN, 1);
+					jB2.setBorder(thickBorder);
+					if (j != 0) {
+						jB2.setText(names[j]);
+					}
+				}
+				if (j == 0) {
+					Border thickBorder = new LineBorder(Color.GREEN, 1);
+					jB2.setBorder(thickBorder);
+					if (i != 0) {
+						jB2.setText("" + i);
+					}
+				}
+				jB1[i][j] = jB2;
+				if (i == 2 && j == 9) {
+
+				}
+				jB1[i][j].addMouseListener(this);
+				jP1.add(jB1[i][j]);
+				jB1[i][j].setName("Button-" + i + "*" + j);
+			}
+		}
+		jP1.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 10; j++) {
+						buttonClickCount[i][j] = 0;
+					}
+				}
+				elephantclickCount = 0;
+				wolfclickCount = 0;
+				tigerclickCount = 0;
+				mouseclickCount = 0;
+				System.out.println("Button Count nullified");
+				elephantclickCount1 = 0;
+				wolfclickCount1 = 0;
+				tigerclickCount1 = 0;
+				mouseclickCount1 = 0;
+				System.out.println("Button Count nullified");
+			}
+
+			public void mouseReleased(MouseEvent e) {
+
+			}
+		});
+		commentBox.setBounds(750, 120, 300, 120);
+		commentBox.setEditable(false);
+		commentBox.setVisible(true);
+		commentBox.setBackground(Color.RED);
+
+		jP1.add(commentBox);
+		jB1[1][9].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// System.out.println("Button-1*9 clicked");
+			}
+		});
+
+		// System.out.println(jB1[5][2].getName());
+		this.add(jP1);
+		setExtendedState(JFrame.NORMAL);
+		this.setVisible(true);
+
 	}
 
 	public void setImages() {
@@ -277,88 +357,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			}
 		} catch (IOException ex) {
 		}
-	}
-
-	private void implementGame(GameAnimal4 ga) {
-		setSize(1150, 900);
-		setResizable(false);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		JPanel jP1 = new JPanel();
-		jP1.setLayout(null);
-		jP1.setBounds(50, 50, 1400, 850);
-		jP1.setVisible(true);
-		jP1.setBackground(Color.GREEN);
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 10; j++) {
-				JButton jB2 = new JButton();
-				jB2.setBounds(i * 70 + 70, j * 70 + 70, 70, 70);
-				jB2.setBackground(Color.GREEN);
-				jB2.setEnabled(true);
-				jB2.setVisible(true);
-				if (i == 0) {
-					// jB2.setText(""+j);
-					Border thickBorder = new LineBorder(Color.GREEN, 1);
-					jB2.setBorder(thickBorder);
-					if (j != 0) {
-						jB2.setText(names[j]);
-					}
-				}
-				if (j == 0) {
-					Border thickBorder = new LineBorder(Color.GREEN, 1);
-					jB2.setBorder(thickBorder);
-					if (i != 0) {
-						jB2.setText("" + i);
-					}
-				}
-				jB1[i][j] = jB2;
-				if (i == 2 && j == 9) {
-
-				}
-				jB1[i][j].addMouseListener(this);
-				jP1.add(jB1[i][j]);
-				jB1[i][j].setName("Button-" + i + "*" + j);
-			}
-		}
-		jP1.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				for (int i = 0; i < 8; i++) {
-					for (int j = 0; j < 10; j++) {
-						buttonClickCount[i][j] = 0;
-					}
-				}
-				elephantclickCount = 0;
-				wolfclickCount = 0;
-				tigerclickCount = 0;
-				mouseclickCount = 0;
-				System.out.println("Button Count nullified");
-				elephantclickCount1 = 0;
-				wolfclickCount1 = 0;
-				tigerclickCount1 = 0;
-				mouseclickCount1 = 0;
-				System.out.println("Button Count nullified");
-			}
-
-			public void mouseReleased(MouseEvent e) {
-
-			}
-		});
-		commentBox.setBounds(750, 120, 300, 120);
-		commentBox.setEditable(false);
-		commentBox.setVisible(true);
-		commentBox.setBackground(Color.RED);
-
-		jP1.add(commentBox);
-		jB1[1][9].addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// System.out.println("Button-1*9 clicked");
-			}
-		});
-
-		// System.out.println(jB1[5][2].getName());
-		ga.add(jP1);
-		setExtendedState(JFrame.NORMAL);
-		this.setVisible(true);
 	}
 
 	public void mousePressed(MouseEvent e) {
@@ -742,7 +740,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 
 	public static void main(String[] args) {
 		GameAnimal4 game = new GameAnimal4();
-		game.implementGame(game);
 		game.setImages();
 		// System.out.println(game.jB1.);
 	}
