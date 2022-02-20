@@ -12,16 +12,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	private int elephantMoveCount = 0, wolfMoveCount = 0, tigerMoveCount = 0, mouseMoveCount = 0,
 			elephantMoveCount1 = 0, wolfMoveCount1 = 0, tigerMoveCount1 = 0, mouseMoveCount1 = 0;
 	private JButton[][] jB1 = new JButton[8][10];
-	private JTextArea player1MovesField = new JTextArea();
-	private JTextArea player2MovesField = new JTextArea();
-	private JTextArea p1elepMovesField = new JTextArea();
-	private JTextArea p2elepMovesField = new JTextArea();
-	private JTextArea p1wolfMovesField = new JTextArea();
-	private JTextArea p2wolfMovesField = new JTextArea();
-	private JTextArea p1tigMovesField = new JTextArea();
-	private JTextArea p2tigMovesField = new JTextArea();
-	private JTextArea p1mousMovesField = new JTextArea();
-	private JTextArea p2mousMovesField = new JTextArea();
 	private int[][] buttonClickCount = new int[8][10];
 	private JTextArea commentBox = new JTextArea("Hi Welcome, Player1 has to make a move to start the game.");
 
@@ -94,7 +84,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			}
 		} catch (IOException ex) {
 		}
-		p1elepMovesField.setText("Elephant moves:" + elephantMoveCount);
 	}
 
 	public void moveElephant1(int newX, int newY, int oldX, int oldY) {
@@ -122,7 +111,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			}
 		} catch (IOException ex) {
 		}
-		p2elepMovesField.setText("Player2 elephant moves:" + elephantMoveCount1);
 	}
 
 	public void moveWolf(int newX, int newY, int oldX, int oldY) {
@@ -366,34 +354,8 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		Border commentBoxBorder = new LineBorder(Color.BLACK, 5, true);
 		commentBox
 				.setBorder(new TitledBorder(commentBoxBorder, "Comments", TitledBorder.CENTER, TitledBorder.TOP));
-		p1elepMovesField.setBounds(750, 260, 300, 60);
-		p1elepMovesField.setEditable(false);
-		p1elepMovesField.setVisible(true);
-		p1wolfMovesField.setBounds(750, 320, 300, 60);
-		p1wolfMovesField.setEditable(false);
-		p1wolfMovesField.setVisible(true);
-		p1tigMovesField.setBounds(750, 380, 300, 60);
-		p1tigMovesField.setEditable(false);
-		p1tigMovesField.setVisible(true);
-		p1mousMovesField.setBounds(750, 440, 300, 60);
-		p1mousMovesField.setEditable(false);
-		p1mousMovesField.setVisible(true);
-		p2elepMovesField.setBounds(750, 500, 300, 60);
-		p2elepMovesField.setEditable(false);
-		p2elepMovesField.setVisible(true);
-		p2wolfMovesField.setBounds(750, 560, 300, 60);
-		p2wolfMovesField.setEditable(false);
-		p2wolfMovesField.setVisible(true);
-		p2tigMovesField.setBounds(750, 620, 300, 60);
-		p2tigMovesField.setEditable(false);
-		p2tigMovesField.setVisible(true);
-		p2mousMovesField.setBounds(750, 680, 300, 60);
-		p2mousMovesField.setEditable(false);
-		p2mousMovesField.setVisible(true);
 
 		jP1.add(commentBox);
-		jP1.add(p1elepMovesField);
-		jP1.add(p2elepMovesField);
 		jB1[1][9].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// System.out.println("Button-1*9 clicked");
