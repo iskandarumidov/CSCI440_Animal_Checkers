@@ -362,16 +362,13 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		commentBox.setBounds(750, 120, 300, 120);
 		commentBox.setEditable(false);
 		commentBox.setVisible(true);
-		Font commentfont = new Font("Arial", Font.BOLD, 20);
 		commentBox.setBackground(Color.RED);
-		commentBox.setFont(commentfont);
 		Border commentBoxBorder = new LineBorder(Color.BLACK, 5, true);
 		commentBox
 				.setBorder(new TitledBorder(commentBoxBorder, "Comments", TitledBorder.CENTER, TitledBorder.TOP));
 		p1elepMovesField.setBounds(750, 260, 300, 60);
 		p1elepMovesField.setEditable(false);
 		p1elepMovesField.setVisible(true);
-		p1elepMovesField.setFont(commentfont);
 		p1wolfMovesField.setBounds(750, 320, 300, 60);
 		p1wolfMovesField.setEditable(false);
 		p1wolfMovesField.setVisible(true);
@@ -384,7 +381,6 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 		p2elepMovesField.setBounds(750, 500, 300, 60);
 		p2elepMovesField.setEditable(false);
 		p2elepMovesField.setVisible(true);
-		p2elepMovesField.setFont(commentfont);
 		p2wolfMovesField.setBounds(750, 560, 300, 60);
 		p2wolfMovesField.setEditable(false);
 		p2wolfMovesField.setVisible(true);
