@@ -89,42 +89,29 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	}
 
 	public void setImages() {
-		try {
-			Image elephantImage = ImageIO.read(getClass().getResource("images/Elephant.jpg"));
-			jB1[2][9].setIcon(new ImageIcon(elephantImage));
-			jB1[2][9].setName("elephantButton");
-			Image wolfImage = ImageIO.read(getClass().getResource("images/Wolf.jpg"));
-			jB1[3][8].setIcon(new ImageIcon(wolfImage));
-			jB1[3][8].setName("wolfButton");
-			Image tigerImage = ImageIO.read(getClass().getResource("images/Tiger.png"));
-			jB1[5][8].setIcon(new ImageIcon(tigerImage));
-			jB1[5][8].setName("tigerButton");
-			Image mouseImage = ImageIO.read(getClass().getResource("images/Rat.jpeg"));
-			jB1[6][9].setIcon(new ImageIcon(mouseImage));
-			jB1[6][9].setName("mouseButton");
-			Image denImage = ImageIO.read(getClass().getResource("images/Den.png"));
-			jB1[4][9].setIcon(new ImageIcon(denImage));
-			jB1[4][9].setName("denButton");
-		} catch (IOException ex) {
-		}
-		try {
-			Image elephantImage1 = ImageIO.read(getClass().getResource("images/BElephant.jpg"));
-			jB1[6][1].setIcon(new ImageIcon(elephantImage1));
-			jB1[6][1].setName("elephantButton1");
-			Image wolfImage1 = ImageIO.read(getClass().getResource("images/BWolf.jpg"));
-			jB1[5][2].setIcon(new ImageIcon(wolfImage1));
-			jB1[5][2].setName("wolfButton1");
-			Image tigerImage1 = ImageIO.read(getClass().getResource("images/BTiger.png"));
-			jB1[3][2].setIcon(new ImageIcon(tigerImage1));
-			jB1[3][2].setName("tigerButton1");
-			Image mouseImage1 = ImageIO.read(getClass().getResource("images/BRat.jpeg"));
-			jB1[2][1].setIcon(new ImageIcon(mouseImage1));
-			jB1[2][1].setName("mouseButton1");
-			Image denImage1 = ImageIO.read(getClass().getResource("images/BDen.png"));
-			jB1[4][1].setIcon(new ImageIcon(denImage1));
-			jB1[4][1].setName("denButton1");
-		} catch (IOException ex) {
-		}
+		jB1[2][9].setText("=E=");
+		jB1[3][8].setText("=W=");
+		jB1[5][8].setText("=T=");
+		jB1[6][9].setText("=M=");
+		jB1[4][9].setText("DEN");
+
+		jB1[6][1].setText("-e-");
+		jB1[5][2].setText("-w-");
+		jB1[3][2].setText("-t-");
+		jB1[2][1].setText("-m-");
+		jB1[4][1].setText("den");
+
+		jB1[2][9].setName("elephantButton");
+		jB1[3][8].setName("wolfButton");
+		jB1[5][8].setName("tigerButton");
+		jB1[6][9].setName("mouseButton");
+		jB1[4][9].setName("denButton");
+
+		jB1[6][1].setName("elephantButton1");
+		jB1[5][2].setName("wolfButton1");
+		jB1[3][2].setName("tigerButton1");
+		jB1[2][1].setName("mouseButton1");
+		jB1[4][1].setName("denButton1");
 	}
 
 	public void moveElephant(int newX, int newY, int oldX, int oldY) {
@@ -132,24 +119,18 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player1MoveCount++;
 			System.out.println("elephant moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("elephantButton");
-			try {
-				Image elephantImage = ImageIO.read(getClass().getResource("images/Elephant.jpg"));
-				jB1[newX][newY].setIcon(new ImageIcon(elephantImage));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("=E=");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
+
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
-		try {
-			if (jB1[4][9].getName() != "elephantButton") {
-				Image denImage = ImageIO.read(getClass().getResource("images/Den.png"));
-				jB1[4][9].setIcon(new ImageIcon(denImage));
-				jB1[4][9].setName("denButton");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][9].getName() != "elephantButton") {
+			jB1[4][9].setText("DEN");
+			jB1[4][9].setName("denButton");
 		}
 	}
 
@@ -158,24 +139,18 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player2MoveCount++;
 			System.out.println("Black elephant moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("elephantButton1");
-			try {
-				Image elephantImage1 = ImageIO.read(getClass().getResource("images/BElephant.jpg"));
-				jB1[newX][newY].setIcon(new ImageIcon(elephantImage1));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("-e-");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
+
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
-		try {
-			if (jB1[4][1].getName() != "elephantButton1") {
-				Image denImage1 = ImageIO.read(getClass().getResource("images/BDen.png"));
-				jB1[4][1].setIcon(new ImageIcon(denImage1));
-				jB1[4][1].setName("denButton1");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][1].getName() != "elephantButton1") {
+			jB1[4][1].setText("den");
+			jB1[4][1].setName("denButton1");
 		}
 	}
 
@@ -185,24 +160,17 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player1MoveCount++;
 			System.out.println("wolf moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("wolfButton");
-			try {
-				Image wolfImage = ImageIO.read(getClass().getResource("images/Wolf.jpg"));
-				jB1[newX][newY].setIcon(new ImageIcon(wolfImage));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("=W=");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
-		try {
-			if (jB1[4][9].getName() != "wolfButton") {
-				Image denImage = ImageIO.read(getClass().getResource("images/Den.png"));
-				jB1[4][9].setIcon(new ImageIcon(denImage));
-				jB1[4][9].setName("denButton");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][9].getName() != "wolfButton") {
+			jB1[4][9].setText("DEN");
+			jB1[4][9].setName("denButton");
 		}
 	}
 
@@ -212,24 +180,17 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player2MoveCount++;
 			System.out.println("Black wolf moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("wolfButton1");
-			try {
-				Image wolfImage1 = ImageIO.read(getClass().getResource("images/BWolf.jpg"));
-				jB1[newX][newY].setIcon(new ImageIcon(wolfImage1));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("-w-");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
-		try {
-			if (jB1[4][1].getName() != "wolfButton1") {
-				Image denImage1 = ImageIO.read(getClass().getResource("images/BDen.png"));
-				jB1[4][1].setIcon(new ImageIcon(denImage1));
-				jB1[4][1].setName("denButton1");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][1].getName() != "wolfButton1") {
+			jB1[4][1].setText("den");
+			jB1[4][1].setName("denButton1");
 		}
 	}
 
@@ -238,24 +199,17 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player1MoveCount++;
 			System.out.println("tiger moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("tigerButton");
-			try {
-				Image tigerImage = ImageIO.read(getClass().getResource("images/Tiger.png"));
-				jB1[newX][newY].setIcon(new ImageIcon(tigerImage));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("=T=");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
-		try {
-			if (jB1[4][9].getName() != "tigerButton") {
-				Image denImage = ImageIO.read(getClass().getResource("images/Den.png"));
-				jB1[4][9].setIcon(new ImageIcon(denImage));
-				jB1[4][9].setName("denButton");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][9].getName() != "tigerButton") {
+			jB1[4][9].setText("DEN");
+			jB1[4][9].setName("denButton");
 		}
 	}
 
@@ -264,24 +218,17 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player2MoveCount++;
 			System.out.println("Black tiger moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("tigerButton1");
-			try {
-				Image tigerImage1 = ImageIO.read(getClass().getResource("images/BTiger.png"));
-				jB1[newX][newY].setIcon(new ImageIcon(tigerImage1));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("-t-");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
-		try {
-			if (jB1[4][1].getName() != "tigerButton1") {
-				Image denImage1 = ImageIO.read(getClass().getResource("images/BDen.png"));
-				jB1[4][1].setIcon(new ImageIcon(denImage1));
-				jB1[4][1].setName("denButton1");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][1].getName() != "tigerButton1") {
+			jB1[4][1].setText("den");
+			jB1[4][1].setName("denButton1");
 		}
 	}
 
@@ -291,24 +238,17 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player1MoveCount++;
 			System.out.println("mouse moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("mouseButton");
-			try {
-				Image mouseImage = ImageIO.read(getClass().getResource("images/Rat.jpeg"));
-				jB1[newX][newY].setIcon(new ImageIcon(mouseImage));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("=M=");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-2's turn.");
 		}
-		try {
-			if (jB1[4][9].getName() != "mouseButton") {
-				Image denImage = ImageIO.read(getClass().getResource("images/Den.png"));
-				jB1[4][9].setIcon(new ImageIcon(denImage));
-				jB1[4][9].setName("denButton");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][9].getName() != "mouseButton") {
+			jB1[4][9].setText("DEN");
+			jB1[4][9].setName("denButton");
 		}
 	}
 
@@ -318,24 +258,17 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 			player2MoveCount++;
 			System.out.println("Black mouse moved to " + newX + "," + newY);
 			jB1[newX][newY].setName("mouseButton1");
-			try {
-				Image mouseImage1 = ImageIO.read(getClass().getResource("images/BRat.jpeg"));
-				jB1[newX][newY].setIcon(new ImageIcon(mouseImage1));
-			} catch (IOException ex) {
-			}
+			jB1[newX][newY].setText("-m-");
+
 			jB1[oldX][oldY].setName("Button" + oldX + "," + oldY);
-			jB1[oldX][oldY].setIcon(null);
+			jB1[oldX][oldY].setText("");
 			System.out.println("Name Changed to " + jB1[oldX][oldY].getName());
 		} else {
 			commentBox.setText("It is player-1's turn.");
 		}
-		try {
-			if (jB1[4][1].getName() != "mouseButton1") {
-				Image denImage1 = ImageIO.read(getClass().getResource("images/BDen.png"));
-				jB1[4][1].setIcon(new ImageIcon(denImage1));
-				jB1[4][1].setName("denButton1");
-			}
-		} catch (IOException ex) {
+		if (jB1[4][1].getName() != "mouseButton1") {
+			jB1[4][1].setText("den");
+			jB1[4][1].setName("denButton1");
 		}
 	}
 
@@ -721,6 +654,5 @@ public class GameAnimal4 extends JFrame implements MouseListener {
 	public static void main(String[] args) {
 		GameAnimal4 game = new GameAnimal4();
 		game.setImages();
-		// System.out.println(game.jB1.);
 	}
 }
